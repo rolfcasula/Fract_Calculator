@@ -6,6 +6,8 @@
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
+// https://github.com/expressionistartist/FractCalculator
+
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
