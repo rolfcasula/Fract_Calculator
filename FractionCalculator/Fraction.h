@@ -10,21 +10,20 @@
 
 @interface Fraction : NSObject
 
-// our two int properties
-
 @property int numerator, denominator;
 
-// our ten methods
-
--(void)         print;
 -(void)         setTo: (int) n over: (int) d;
+
 -(Fraction *)   add: (Fraction *) f;
 -(Fraction *)   subtract: (Fraction *) f;
 -(Fraction *)   multiply: (Fraction *) f;
 -(Fraction *)   divide: (Fraction *) f;
+
 -(void)         reduce;
+
 -(double)       convertToNum;
 -(NSString *)   convertToString;
--(Fraction *)   negativeNumber: (Fraction *) f;                              
+
+-(Fraction *)   negativeNumber: (Fraction *) f;
 
 @end

@@ -13,11 +13,15 @@
     BOOL denominatorsAreEqual;
 }
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#pragma mark - Properties
+
 @synthesize numerator, denominator;
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// let's set the value of the numerator and denominater of our fraction
+#pragma mark - Setter
 
 -(void) setTo: (int) n over: (int) d
 {
@@ -27,57 +31,13 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
--(void) print
-{
-    NSLog (@"%i/%i", numerator, denominator);
-}
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// By calling this method we cast a double in order to return as a final result a floating point number instead of a fraction
-
--(double) convertToNum
-{
-    if (denominator != 0)
-        return (double) numerator / denominator;
-    else
-        return NAN;
-}
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// Converting an int into a string in order it can be displayed in our calculator
-
--(NSString *) convertToString
-{
-    if (numerator == denominator)
-        if (numerator == 0)
-            return @"0";
-        else
-            return @"1";
-    else if (denominator == 1)
-        return [NSString stringWithFormat: @"%i", numerator];
-    else
-        return [NSString stringWithFormat: @"%i/%i", numerator, denominator];
-}
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// add a Fraction to the receiver
+#pragma mark - Arithmetic Operations Methods
 
 -(Fraction *) add: (Fraction *) f
 {
-    
-    // To add two fractions:
-    // a/b + c/d = ((a*d) + (b*c)) / (b * d)
-    
-    // result will store the result of the addition
-    
     Fraction *result = [[Fraction alloc] init];
-    
     result.numerator = numerator * f.denominator + denominator * f.numerator;
     result.denominator = denominator * f.denominator;
-    
     [result reduce];
     return result;
 }
@@ -85,10 +45,8 @@
 -(Fraction *) subtract: (Fraction *) f;
 {
     Fraction *result = [[Fraction alloc] init];
-    
     result.numerator = numerator * f.denominator - denominator * f.numerator;
     result.denominator = denominator * f.denominator;
-    
     [result reduce];
     return result;
 }
@@ -96,10 +54,8 @@
 -(Fraction *) multiply: (Fraction *) f
 {
     Fraction *result = [[Fraction alloc] init];
-    
     result.numerator = numerator * f.numerator;
     result.denominator = denominator * f.denominator;
-    
     [result reduce];
     return result;
 }
@@ -107,17 +63,15 @@
 -(Fraction *) divide: (Fraction *) f
 {
     Fraction *result = [[Fraction alloc] init];
-    
     result.numerator = numerator * f.denominator;
     result.denominator = denominator * f.numerator;
-    
     [result reduce];
     return result;
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// We want to find the greatest common divisor (gcd); this method will be called every time we perform an arithmetic operation
+#pragma mark - Reduce (fraction in lowest terms) Method
 
 - (void) reduce
 {
@@ -140,7 +94,32 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// Created this method to operate with negative numbers
+#pragma mark - Conversion Methods
+
+-(double) convertToNum
+{
+    if (denominator != 0)
+        return (double) numerator / denominator;
+    else
+        return NAN;
+}
+
+-(NSString *) convertToString
+{
+    if (numerator == denominator)
+        if (numerator == 0)
+            return @"0";
+        else
+            return @"1";
+        else if (denominator == 1)
+            return [NSString stringWithFormat: @"%i", numerator];
+        else
+            return [NSString stringWithFormat: @"%i/%i", numerator, denominator];
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#pragma mark - Negative Number Method
 
 -(Fraction *) negativeNumber: (Fraction *) f
 {
@@ -149,5 +128,7 @@
     result.denominator = f.denominator;
     return result;
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
 @end

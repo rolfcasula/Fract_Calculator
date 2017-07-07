@@ -10,13 +10,18 @@
 
 @implementation Calculator
 
-@synthesize operand1, operand2, accumulator;              // the three properties that will be used in every single operation
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#pragma mark - Properties
+
+@synthesize operand1, operand2, accumulator;
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
--(id) init {                             // when this init method get called the three properties get allocated and initiated
+#pragma mark - Initialization Method
+
+-(id) init {
     self = [super init];
-    
     if (self) {
         operand1 = [[Fraction alloc] init];
         operand2 = [[Fraction alloc] init];
@@ -27,14 +32,7 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
--(void) clear {                                           // by calling this method we are basically resetting our calculator
-    accumulator.numerator = 0;
-    accumulator.denominator = 0;
-}
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// we call this method every time we have to perform one of the four basic arithmetic operation between two fractions and that returns a fraction called "accumulator"
+#pragma mark - Perform Arithmetic Operation Method
 
 -(Fraction *) performOperation: (char) op
 {
@@ -59,5 +57,16 @@
     
     return accumulator;
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+#pragma mark - Clear Method
+
+-(void) clear {
+    accumulator.numerator = 0;
+    accumulator.denominator = 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
 @end

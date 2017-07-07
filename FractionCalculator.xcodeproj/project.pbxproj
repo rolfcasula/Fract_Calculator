@@ -84,6 +84,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F56453B11EF024E8002CBF54 /* View layer */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4742D1C07630B005B3F19 /* Main.storyboard */,
+				F5A474321C07630B005B3F19 /* LaunchScreen.storyboard */,
+			);
+			name = "View layer";
+			sourceTree = "<group>";
+		};
+		F56453B21EF024F4002CBF54 /* Controller layer */ = {
+			isa = PBXGroup;
+			children = (
+				F5A474271C07630B005B3F19 /* AppDelegate.h */,
+				F5A474281C07630B005B3F19 /* AppDelegate.m */,
+				F5A4742A1C07630B005B3F19 /* ViewController.h */,
+				F5A4742B1C07630B005B3F19 /* ViewController.m */,
+			);
+			name = "Controller layer";
+			sourceTree = "<group>";
+		};
+		F56453B31EF02506002CBF54 /* Model layer / Business logic */ = {
+			isa = PBXGroup;
+			children = (
+				F5A474651C077642005B3F19 /* Fraction.h */,
+				F5A474661C077642005B3F19 /* Fraction.m */,
+				F5A474681C07767B005B3F19 /* Calculator.h */,
+				F5A474691C07767B005B3F19 /* Calculator.m */,
+			);
+			name = "Model layer / Business logic";
+			sourceTree = "<group>";
+		};
 		F5A474181C07630B005B3F19 = {
 			isa = PBXGroup;
 			children = (
@@ -107,17 +138,10 @@
 		F5A474231C07630B005B3F19 /* FractionCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				F5A474271C07630B005B3F19 /* AppDelegate.h */,
-				F5A474281C07630B005B3F19 /* AppDelegate.m */,
-				F5A4742A1C07630B005B3F19 /* ViewController.h */,
-				F5A4742B1C07630B005B3F19 /* ViewController.m */,
-				F5A4742D1C07630B005B3F19 /* Main.storyboard */,
-				F5A474651C077642005B3F19 /* Fraction.h */,
-				F5A474661C077642005B3F19 /* Fraction.m */,
-				F5A474681C07767B005B3F19 /* Calculator.h */,
-				F5A474691C07767B005B3F19 /* Calculator.m */,
+				F56453B11EF024E8002CBF54 /* View layer */,
+				F56453B21EF024F4002CBF54 /* Controller layer */,
+				F56453B31EF02506002CBF54 /* Model layer / Business logic */,
 				F5A474301C07630B005B3F19 /* Assets.xcassets */,
-				F5A474321C07630B005B3F19 /* LaunchScreen.storyboard */,
 				F5A474351C07630B005B3F19 /* Info.plist */,
 				F5A474241C07630B005B3F19 /* Supporting Files */,
 			);

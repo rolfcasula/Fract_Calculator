@@ -11,13 +11,10 @@
 
 @interface Calculator : NSObject
 
-// our two properties
 @property (strong, nonatomic) Fraction *operand1;
 @property (strong, nonatomic) Fraction *operand2;
 @property (strong, nonatomic) Fraction *accumulator;
 
-
-// our two methods
 -(Fraction *) performOperation: (char) op;
 -(void) clear;
 

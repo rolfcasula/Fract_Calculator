@@ -14,31 +14,23 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *display;
 
-// New methods just added later (to fix a few bugs with negative numbers)
-
--(int) setOldOp: (int) op;
--(void) processDigit: (int) digit;
--(void) processOp: (char) theOp;
--(void) storeFracPart;
-
-// Numeric keys
-
 -(IBAction) clickDigit: (UIButton *) sender;
-
-// Arithmetic Operation keys
 
 -(IBAction) clickPlus;
 -(IBAction) clickMinus;
 -(IBAction) clickMultiply;
 -(IBAction) clickDivide;
 
-// Misc. Keys
-
 -(IBAction) clickOver;
 -(IBAction) clickEquals;
 -(IBAction) convertToNumber;
 -(IBAction) clickClear;
+
 -(void) commonStatements;
+-(int) setOldOp: (int) op;
+-(void) processDigit: (int) digit;
+-(void) processOp: (char) theOp;
+-(void) storeFracPart;
 
 @end
 
