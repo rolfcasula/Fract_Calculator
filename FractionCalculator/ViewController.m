@@ -13,8 +13,8 @@
 
 @end
 
-@implementation ViewController
-{
+@implementation ViewController {
+    
     // Properties
     
     char op, oldOp;
@@ -37,21 +37,18 @@
 
 #pragma mark - Actions
 
-- (IBAction) clickDigit: (UIButton *) sender
-{
+- (IBAction) clickDigit: (UIButton *) sender {
     int digit = (int) sender.tag;
     
     [self processDigit: digit];
     digitClicked = YES;
 }
 
--(IBAction) clickPlus
-{
+-(IBAction) clickPlus {
     [self processOp: '+'];
 }
 
--(IBAction) clickMinus
-{
+-(IBAction) clickMinus {
     if (!clickOverPressed && isNumerator && !operationPressed) {
        [self processOp: '-'];
         clickOverPressed = YES;
@@ -69,19 +66,16 @@
     }
 }
 
--(IBAction) clickMultiply
-{
+-(IBAction) clickMultiply {
     [self processOp: '*'];
 }
 
--(IBAction) clickDivide
-{
+-(IBAction) clickDivide {
     [self processOp: '/'];
 }
 
 // Creation of a fraction (e.g. 1/3) that can be used as an operand in further arithmetic operations (e.g. 1/3 + 1/2 = 5/6)
--(IBAction) clickOver
-{
+-(IBAction) clickOver {
     [self storeFracPart];
     isNumerator = NO;
     [displayString appendString: @"/"];
@@ -89,8 +83,7 @@
 }
 
 // The result will be a reduced fraction instead of a floating point number 
--(IBAction) clickEquals
-{
+-(IBAction) clickEquals {
     [self storeFracPart];
     
     if (processOpAlreadyUsed == NO) {
@@ -127,8 +120,7 @@
 }
 
 // The result will be a floating-point number instead of a fraction
--(IBAction) convertToNumber
-{
+-(IBAction) convertToNumber {
     if ( firstOperand == NO ) {
         [self storeFracPart];
         [myCalculator performOperation: op];
@@ -142,8 +134,7 @@
     [self commonStatements];
 }
 
--(IBAction) clickClear
-{
+-(IBAction) clickClear {
     isNumerator = YES;
     firstOperand = YES;
     currentNumber = 0;
@@ -156,8 +147,7 @@
 
 #pragma mark - UIViewController Methods
 
--(void) viewDidLoad
-{
+-(void) viewDidLoad {
     clickOverPressed = NO;
     operationPressed = NO;
     
@@ -176,8 +166,7 @@
 
 #pragma mark - Helper Methods
 
--(void) commonStatements
-{
+-(void) commonStatements {
     currentNumber = 0;
     isNumerator = YES;
     firstOperand = YES;
@@ -186,21 +175,17 @@
     isNegative = NO;
 }
 
--(int) setOldOp: (int) ip
-{
+-(int) setOldOp: (int) ip {
     return oldOp = ip;
 }
 
-
--(void) processDigit: (int) digit
-{
+-(void) processDigit: (int) digit {
     currentNumber = currentNumber * 10 + digit;
     [displayString appendString: [NSString stringWithFormat: @"%i", digit]];
     display.text = displayString;
 }
 
--(void) processOp: (char) theOp
-{
+-(void) processOp: (char) theOp {
     NSString *opStr;
     
     op = theOp;
@@ -270,8 +255,7 @@
     digitClicked = NO;
 }
 
--(void) storeFracPart
-{
+-(void) storeFracPart {
     if (firstOperand) {
         if (isNumerator) {
             myCalculator.operand1.numerator = currentNumber;

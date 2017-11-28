@@ -6,6 +6,8 @@
 //  Copyright © 2013 Rolf Alexandro Casula. All rights reserved.
 //
 
+// The latest update I made to this app was with Xcode 7.3 (Swift 2.2), therefore a more recent version of Xcode may not work properly
+
 #import "AppDelegate.h"
 
 @interface AppDelegate ()

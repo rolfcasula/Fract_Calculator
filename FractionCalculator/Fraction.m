@@ -19,16 +19,14 @@
 
 #pragma mark - Setter
 
--(void) setTo: (int) n over: (int) d
-{
+-(void) setTo: (int) n over: (int) d {
     numerator = n;
     denominator = d;
 }
 
 #pragma mark - Arithmetic Operations Methods
 
--(Fraction *) add: (Fraction *) f
-{
+-(Fraction *) add: (Fraction *) f {
     Fraction *result = [[Fraction alloc] init];
     result.numerator = numerator * f.denominator + denominator * f.numerator;
     result.denominator = denominator * f.denominator;
@@ -36,8 +34,7 @@
     return result;
 }
 
--(Fraction *) subtract: (Fraction *) f;
-{
+-(Fraction *) subtract: (Fraction *) f {
     Fraction *result = [[Fraction alloc] init];
     result.numerator = numerator * f.denominator - denominator * f.numerator;
     result.denominator = denominator * f.denominator;
@@ -45,8 +42,7 @@
     return result;
 }
 
--(Fraction *) multiply: (Fraction *) f
-{
+-(Fraction *) multiply: (Fraction *) f {
     Fraction *result = [[Fraction alloc] init];
     result.numerator = numerator * f.numerator;
     result.denominator = denominator * f.denominator;
@@ -54,8 +50,7 @@
     return result;
 }
 
--(Fraction *) divide: (Fraction *) f
-{
+-(Fraction *) divide: (Fraction *) f {
     Fraction *result = [[Fraction alloc] init];
     result.numerator = numerator * f.denominator;
     result.denominator = denominator * f.numerator;
@@ -65,8 +60,7 @@
 
 #pragma mark - Reduce (fraction in lowest terms) Method
 
-- (void) reduce
-{
+- (void) reduce {
     int u = numerator;
     int v = denominator;
     int temp;
@@ -86,16 +80,14 @@
 
 #pragma mark - Conversion Methods
 
--(double) convertToNum
-{
+-(double) convertToNum {
     if (denominator != 0)
         return (double) numerator / denominator;
     else
         return NAN;
 }
 
--(NSString *) convertToString
-{
+-(NSString *) convertToString {
     if (numerator == denominator)
         if (numerator == 0)
             return @"0";
@@ -109,8 +101,7 @@
 
 #pragma mark - Negative Number Method
 
--(Fraction *) negativeNumber: (Fraction *) f
-{
+-(Fraction *) negativeNumber: (Fraction *) f {
     Fraction *result = [[Fraction alloc] init];
     result.numerator = -f.numerator;
     result.denominator = f.denominator;

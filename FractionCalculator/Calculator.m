@@ -28,8 +28,7 @@
 
 #pragma mark - Perform Arithmetic Operation Method
 
--(Fraction *) performOperation: (char) op
-{
+-(Fraction *) performOperation: (char) op {
     Fraction *result;
     
     switch (op) {
