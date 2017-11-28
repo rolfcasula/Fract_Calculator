@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Fraction_Calculator
 //
-//  Created by Rolf Alexandro Casula on 26/11/2015.
+//  Created by Rolf Alexandro Casula on 20/10/2013.
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
@@ -15,6 +15,8 @@
 
 @implementation ViewController
 {
+    // Properties
+    
     char op, oldOp;
     int currentNumber;
     BOOL clickOverPressed;
@@ -33,13 +35,7 @@
 
 @synthesize display;
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark - IBAction
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
+#pragma mark - Actions
 
 - (IBAction) clickDigit: (UIButton *) sender
 {
@@ -48,10 +44,6 @@
     [self processDigit: digit];
     digitClicked = YES;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
 
 -(IBAction) clickPlus
 {
@@ -87,13 +79,7 @@
     [self processOp: '/'];
 }
 
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 // Creation of a fraction (e.g. 1/3) that can be used as an operand in further arithmetic operations (e.g. 1/3 + 1/2 = 5/6)
-
 -(IBAction) clickOver
 {
     [self storeFracPart];
@@ -102,12 +88,7 @@
     display.text = displayString;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 // The result will be a reduced fraction instead of a floating point number 
-
 -(IBAction) clickEquals
 {
     [self storeFracPart];
@@ -145,12 +126,7 @@
     [self commonStatements];
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 // The result will be a floating-point number instead of a fraction
-
 -(IBAction) convertToNumber
 {
     if ( firstOperand == NO ) {
@@ -166,10 +142,6 @@
     [self commonStatements];
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 -(IBAction) clickClear
 {
     isNumerator = YES;
@@ -182,13 +154,7 @@
     processOpAlreadyUsed = NO;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - UIViewController Methods
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
 
 -(void) viewDidLoad
 {
@@ -204,21 +170,11 @@
     digitClicked = NO;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Helper Methods
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
 
 -(void) commonStatements
 {
@@ -230,18 +186,11 @@
     isNegative = NO;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
-
 -(int) setOldOp: (int) ip
 {
     return oldOp = ip;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
 
 -(void) processDigit: (int) digit
 {
@@ -249,10 +198,6 @@
     [displayString appendString: [NSString stringWithFormat: @"%i", digit]];
     display.text = displayString;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark
 
 -(void) processOp: (char) theOp
 {
@@ -325,10 +270,6 @@
     digitClicked = NO;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark 
-
 -(void) storeFracPart
 {
     if (firstOperand) {
@@ -351,8 +292,5 @@
     }
     currentNumber = 0;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 
 @end

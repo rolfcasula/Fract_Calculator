@@ -2,7 +2,7 @@
 //  ViewController.h
 //  Fraction_Calculator
 //
-//  Created by Rolf Alexandro Casula on 26/11/2015.
+//  Created by Rolf Alexandro Casula on 20/10/2013.
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
@@ -12,7 +12,11 @@
 
 @interface ViewController : UIViewController
 
+#pragma mark - Outlet
+
 @property (strong, nonatomic) IBOutlet UILabel *display;
+
+#pragma mark - Actions
 
 -(IBAction) clickDigit: (UIButton *) sender;
 
@@ -25,6 +29,8 @@
 -(IBAction) clickEquals;
 -(IBAction) convertToNumber;
 -(IBAction) clickClear;
+
+#pragma mark - Methods
 
 -(void) commonStatements;
 -(int) setOldOp: (int) op;

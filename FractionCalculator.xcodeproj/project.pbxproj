@@ -13,8 +13,6 @@
 		F5A4742F1C07630B005B3F19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A4742D1C07630B005B3F19 /* Main.storyboard */; };
 		F5A474311C07630B005B3F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A474301C07630B005B3F19 /* Assets.xcassets */; };
 		F5A474341C07630B005B3F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A474321C07630B005B3F19 /* LaunchScreen.storyboard */; };
-		F5A4743F1C07630B005B3F19 /* Fraction_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4743E1C07630B005B3F19 /* Fraction_CalculatorTests.m */; };
-		F5A4744A1C07630B005B3F19 /* Fraction_CalculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A474491C07630B005B3F19 /* Fraction_CalculatorUITests.m */; };
 		F5A474671C077642005B3F19 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A474661C077642005B3F19 /* Fraction.m */; };
 		F5A4746A1C07767B005B3F19 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A474691C07767B005B3F19 /* Calculator.m */; };
 /* End PBXBuildFile section */
@@ -48,11 +46,7 @@
 		F5A474331C07630B005B3F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A474351C07630B005B3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5A4743A1C07630B005B3F19 /* FractionCalculator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractionCalculator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5A4743E1C07630B005B3F19 /* Fraction_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fraction_CalculatorTests.m; sourceTree = "<group>"; };
-		F5A474401C07630B005B3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5A474451C07630B005B3F19 /* FractionCalculator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractionCalculator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5A474491C07630B005B3F19 /* Fraction_CalculatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fraction_CalculatorUITests.m; sourceTree = "<group>"; };
-		F5A4744B1C07630B005B3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5A474651C077642005B3F19 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
 		F5A474661C077642005B3F19 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 		F5A474681C07767B005B3F19 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
@@ -84,27 +78,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F56453B11EF024E8002CBF54 /* View layer */ = {
+		F56453B11EF024E8002CBF54 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F5A4742D1C07630B005B3F19 /* Main.storyboard */,
 				F5A474321C07630B005B3F19 /* LaunchScreen.storyboard */,
 			);
-			name = "View layer";
+			name = View;
 			sourceTree = "<group>";
 		};
-		F56453B21EF024F4002CBF54 /* Controller layer */ = {
+		F56453B21EF024F4002CBF54 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F5A474271C07630B005B3F19 /* AppDelegate.h */,
-				F5A474281C07630B005B3F19 /* AppDelegate.m */,
 				F5A4742A1C07630B005B3F19 /* ViewController.h */,
 				F5A4742B1C07630B005B3F19 /* ViewController.m */,
 			);
-			name = "Controller layer";
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		F56453B31EF02506002CBF54 /* Model layer / Business logic */ = {
+		F56453B31EF02506002CBF54 /* Model layer */ = {
 			isa = PBXGroup;
 			children = (
 				F5A474651C077642005B3F19 /* Fraction.h */,
@@ -112,15 +104,13 @@
 				F5A474681C07767B005B3F19 /* Calculator.h */,
 				F5A474691C07767B005B3F19 /* Calculator.m */,
 			);
-			name = "Model layer / Business logic";
+			name = "Model layer";
 			sourceTree = "<group>";
 		};
 		F5A474181C07630B005B3F19 = {
 			isa = PBXGroup;
 			children = (
 				F5A474231C07630B005B3F19 /* FractionCalculator */,
-				F5A4743D1C07630B005B3F19 /* FractionCalculatorTests */,
-				F5A474481C07630B005B3F19 /* FractionCalculatorUITests */,
 				F5A474221C07630B005B3F19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,9 +128,11 @@
 		F5A474231C07630B005B3F19 /* FractionCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				F56453B11EF024E8002CBF54 /* View layer */,
-				F56453B21EF024F4002CBF54 /* Controller layer */,
-				F56453B31EF02506002CBF54 /* Model layer / Business logic */,
+				F5A474271C07630B005B3F19 /* AppDelegate.h */,
+				F5A474281C07630B005B3F19 /* AppDelegate.m */,
+				F56453B11EF024E8002CBF54 /* View */,
+				F56453B21EF024F4002CBF54 /* Controller */,
+				F56453B31EF02506002CBF54 /* Model layer */,
 				F5A474301C07630B005B3F19 /* Assets.xcassets */,
 				F5A474351C07630B005B3F19 /* Info.plist */,
 				F5A474241C07630B005B3F19 /* Supporting Files */,
@@ -154,24 +146,6 @@
 				F5A474251C07630B005B3F19 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F5A4743D1C07630B005B3F19 /* FractionCalculatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				F5A4743E1C07630B005B3F19 /* Fraction_CalculatorTests.m */,
-				F5A474401C07630B005B3F19 /* Info.plist */,
-			);
-			path = FractionCalculatorTests;
-			sourceTree = "<group>";
-		};
-		F5A474481C07630B005B3F19 /* FractionCalculatorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F5A474491C07630B005B3F19 /* Fraction_CalculatorUITests.m */,
-				F5A4744B1C07630B005B3F19 /* Info.plist */,
-			);
-			path = FractionCalculatorUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5A4743F1C07630B005B3F19 /* Fraction_CalculatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5A4744A1C07630B005B3F19 /* Fraction_CalculatorUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

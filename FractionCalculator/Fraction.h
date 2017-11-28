@@ -2,7 +2,7 @@
 //  Fraction.h
 //  Fraction_Calculator
 //
-//  Created by Rolf Alexandro Casula on 26/11/2015.
+//  Created by Rolf Alexandro Casula on 20/10/2013.
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
@@ -10,9 +10,13 @@
 
 @interface Fraction : NSObject
 
+#pragma mark - Properties
+
 @property int numerator, denominator;
 
 -(void)         setTo: (int) n over: (int) d;
+
+#pragma mark - Methods
 
 -(Fraction *)   add: (Fraction *) f;
 -(Fraction *)   subtract: (Fraction *) f;

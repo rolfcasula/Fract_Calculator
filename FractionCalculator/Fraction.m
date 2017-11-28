@@ -2,7 +2,7 @@
 //  Fraction.m
 //  Fraction_Calculator
 //
-//  Created by Rolf Alexandro Casula on 26/11/2015.
+//  Created by Rolf Alexandro Casula on 20/10/2013.
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
@@ -13,13 +13,9 @@
     BOOL denominatorsAreEqual;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Properties
 
 @synthesize numerator, denominator;
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 #pragma mark - Setter
 
@@ -28,8 +24,6 @@
     numerator = n;
     denominator = d;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 #pragma mark - Arithmetic Operations Methods
 
@@ -69,8 +63,6 @@
     return result;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Reduce (fraction in lowest terms) Method
 
 - (void) reduce
@@ -91,8 +83,6 @@
     numerator /= u;
     denominator /= u;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 #pragma mark - Conversion Methods
 
@@ -117,8 +107,6 @@
             return [NSString stringWithFormat: @"%i/%i", numerator, denominator];
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Negative Number Method
 
 -(Fraction *) negativeNumber: (Fraction *) f
@@ -128,7 +116,5 @@
     result.denominator = f.denominator;
     return result;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 @end

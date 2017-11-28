@@ -2,7 +2,7 @@
 //  Calculator.m
 //  Fraction_Calculator
 //
-//  Created by Rolf Alexandro Casula on 26/11/2015.
+//  Created by Rolf Alexandro Casula on 20/10/2013.
 //  Copyright © 2015 Rolf Alexandro Casula. All rights reserved.
 //
 
@@ -10,15 +10,11 @@
 
 @implementation Calculator
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Properties
 
 @synthesize operand1, operand2, accumulator;
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-#pragma mark - Initialization Method
+#pragma mark - Initializer
 
 -(id) init {
     self = [super init];
@@ -29,8 +25,6 @@
     }
     return self;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 #pragma mark - Perform Arithmetic Operation Method
 
@@ -58,15 +52,11 @@
     return accumulator;
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
 #pragma mark - Clear Method
 
 -(void) clear {
     accumulator.numerator = 0;
     accumulator.denominator = 0;
 }
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
 
 @end
